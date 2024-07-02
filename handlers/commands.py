@@ -30,4 +30,4 @@ async def start_command(message: Message, state: FSMContext, bot: Bot):
         else:
             db.add_user_referral(int(message.from_user.id))
     await state.clear()
-    await bot.send_message(chat_id=message.chat.id, text="<b>Proof Of Move</b>\n\nВыберите действие", reply_markup=main_menu_inline_keyboard(message.from_user.id))
+    await bot.send_message(chat_id=message.chat.id, text="<b>Proof Of Move</b>\n\nДобро пожаловать в проект <b>Proof Of Move</b>!\nТут ты сможешь зарабатывать криптовалюту за шаги и покупать роботов, которые будут ходить за тебя.", reply_markup=main_menu_inline_keyboard(message.from_user.id))

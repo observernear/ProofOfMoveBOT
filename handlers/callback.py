@@ -13,5 +13,7 @@ import config as cfg
 from fsm.state import *
 
 
+
 async def callback_handler_profile(callback: CallbackQuery, bot: Bot, state: FSMContext):
-    pass
+    if callback.data == "location":
+        await bot.send_message(chat_id=callback.from_user.id, text='Данная функция создана для тех у кого устройство не поддерживает отправку геолокации внутри игры.\n\n<b>Вы можете отправить свою локацию сюда, просто нажмите на кнопку <i>"Получить $POM"</i>, она находиться снизу, где расположена ваша клавиатура</b>\n\n<i>ДАННЫЕ О ВАШЕЙ ГЕОЛОКАЦИИ ОСТАЮТСЯ В СЕКРЕТЕ И НЕ БУДУТ СОХРАНЕНЫ И ИСПОЛЬЗОВАНЫ!</i>', reply_markup=location_reply_keyboard())

@@ -11,6 +11,7 @@ import config as cfg
 from handlers.commands import *
 from handlers.messages import *
 from handlers.callback import *
+from handlers.location import *
 
 
 async def start():
@@ -21,6 +22,7 @@ async def start():
     dp = Dispatcher()
 
     dp.message.register(start_command, Command(commands=["start"]))
+    dp.message.register(location_handler, F.location)
     dp.callback_query.register(callback_handler_profile, F.data.in_(["build_route", "location"]))
 
     bot_commands = [

@@ -1,5 +1,5 @@
 import requests
 
 
-res = requests.post(url='https://proofofmove.ru/api', json={'tg_id': 5064842218})
+res = requests.post(url='https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAtPJQusY5DAvHLtFTn1BNd1NA-ikMbu9E')
 print(res.json())
