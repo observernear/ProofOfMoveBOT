@@ -23,11 +23,10 @@ async def start():
 
     dp.message.register(start_command, Command(commands=["start"]))
     dp.message.register(location_handler, F.location)
-    dp.callback_query.register(callback_handler_profile, F.data.in_(["build_route", "location"]))
+    dp.callback_query.register(callback_handler_profile, F.data.in_(["info", "location"]))
 
     bot_commands = [
-        BotCommand(command="/start", description="Запуск"),
-        BotCommand(command="/remove", description="Внести новые данные"),
+        BotCommand(command="/start", description="Запуск")
     ]
 
     await bot.set_my_commands(bot_commands)
